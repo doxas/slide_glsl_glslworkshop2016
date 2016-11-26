@@ -1,244 +1,46 @@
 
-#### test title
-
-paragraparagraparagraparagra*parag*rapppppparagraph
-
-paragraparagraparagraparagra**iparag**rapppppparagraph
-
-![](sample.png)
+### <span style="font-size: 72px; display: inline-block; margin: 70px 0px 50px">GLSL（OpenGL Shading Language）</span>
 
 ---
 
-#### test title
+### <span style="font-size: 72px; display: inline-block; margin: 70px 0px 50px">GLSL（OpenGL Shading Language）</span>
 
-<a href="">paragraparagraparagraparagra*parag*rapppppparagraph</a>
-
-paragraparagraparagraparagra**iparag**rapppppparagraph
+### <span style="color: white; font-family: yu gothic;"><br>GLSL は OpenGL 用のシェーダ記述言語です。<br>シェーダは慣れてくれば意外と簡単！<br>とにかく気軽にチャレンジしてみましょう。<br><br><br><span style="color: deeppink; font-family: cursive">doxas.org/work/glsl_editor/</span><br><br>シェーダエディタを使って Let's enjoy!</span>
 
 ---
 
-#### 000
+#### schedule
 
-@@@
-{
-    "title": "arctangent demo",
-    "author": "doxas",
-    "description": "arctangent distorsion."
-}
-@@@
-
----
-
-|||
-precision mediump float;
-uniform vec2  resolution;
-uniform vec2  mouse;
-uniform float time;
-uniform sampler2D backbuffer;
-
-const vec3 pinkColor = vec3(1.0, 0.1, 0.5);
-const vec3 blueColor = vec3(0.1, 0.3, 0.9);
-
-float waveNeon(vec2 p, float power, float width, float height, float speed){
-    float x = cos(abs(p.x * width));
-    float y = power / abs(p.y + sin(p.x * 25.0 + time * speed) * height);
-    return max(x * y, 0.0);
-}
-
-void main(){
-    vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / min(resolution.x, resolution.y);
-    vec2 m = mouse * 2.0 - 1.0;
-    p = p * abs(atan(p.y / p.x));
-    float a = waveNeon(p, 0.2, 5.0, 0.25 + abs(m.x), 0.75);
-    float b = waveNeon(p, 0.5, 2.5, 0.5  + abs(m.y), 0.25);
-    gl_FragColor = vec4(pinkColor * a + blueColor * b, 1.0);
-}
-|||
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">10:30 ~</span>: 開場
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">11:00 ~ 11:15</span>: オープニング
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">11:15 ~ 12:15</span>: GLSL 基礎講座（@h_doxas）
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">12:15 ~ 13:30</span>: 休憩時間
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">13:30 ~ 14:15</span>: three.jsによる、Webフォントを利用した文字のGPGPUパーティクル表現（@tkm0125）
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">14:30 ~ 15:15</span>: GLSL SandboxでHello World！（@notargs）
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">15:15 ~ 17:00</span>: ライブコーディング＆もくもくタイム
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">17:00</span>: *作品投稿締め切り*
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">17:15 ~ 18:15</span>: 作品上映・作品紹介
+* <span style="font-family: arial; font-weight: bold; width: 250px; display: inline-block;">18:15 ~</span>: クロージング
 
 ---
 
-#### 000
+#### information
 
-@@@
-{
-    "title": "glslsandbox default",
-    "author": "mr.doob",
-    "description": "in the page of new shader."
-}
-@@@
-
----
-
-|||
-#ifdef GL_ES
-precision mediump float;
-#endif
-
-#extension GL_OES_standard_derivatives : enable
-
-uniform float time;
-uniform vec2 mouse;
-uniform vec2 resolution;
-
-void main( void ) {
-
-	vec2 position = ( gl_FragCoord.xy / resolution.xy ) + mouse / 4.0;
-
-	float color = 0.0;
-	color += sin( position.x * cos( time / 15.0 ) * 80.0 ) + cos( position.y * cos( time / 15.0 ) * 10.0 );
-	color += sin( position.y * sin( time / 10.0 ) * 40.0 ) + cos( position.x * sin( time / 25.0 ) * 40.0 );
-	color += sin( position.x * sin( time / 5.0 ) * 10.0 ) + sin( position.y * sin( time / 35.0 ) * 80.0 );
-	color *= sin( time / 10.0 ) * 0.5;
-
-	gl_FragColor = vec4( vec3( color, color * 0.5, sin( color + time / 3.0 ) * 0.75 ), 1.0 );
-
-}
-|||
+* 開催時間中の会場の出入りは自由にできます
+* ネックストラップが参加証になります
+* 会場のあるビル内にはコンビニ、レストラン等あります
+* 会場は飲食物持ち込み可能です（ゴミ箱もあります）
+* ゴミの管理などは各自、常識的な対応をお願いします
+* 喫煙所は同ビル内 4F にあります
+* わからないことはどんどん質問してね！
 
 ---
 
-paragraph`code`paragraph
+#### sponsor
 
-paragraph
-
-* list
-* list
-* list
-* list
-* list
+<div style="text-align: center;"><p style="margin: 0px auto;"><img src="image/logo.png" alt="logo" style="margin: 0px auto;"></p><p style="margin: 50px auto; color: deeppink; font-size: 48px;">www.digirea.com</p></div>
 
 ---
 
-```
-codeblock
-    codeblock
-
-    codeblock
-    codeblock
-```
-
----
-
-paragraph
-
---blockquote--
-
----
-
-#### question 1
-
-what is this?
-
-<input type="radio" id="radio01_01" name="radio01"><label for="radio01_01">ans 01</label>
-<input type="radio" id="radio01_02" name="radio01"><label for="radio01_02">ans 02</label>
-<input type="radio" id="radio01_03" name="radio01"><label for="radio01_03">ans 03</label>
-<input type="radio" id="radio01_04" name="radio01"><label for="radio01_04">ans 04</label>
-
----
-
-#### question 2
-
-what is this?
-
-<input type="radio" id="radio02_01" name="radio02"><label for="radio02_01">ans 01</label>
-<input type="radio" id="radio02_02" name="radio02"><label for="radio02_02">ans 02</label>
-<input type="radio" id="radio02_03" name="radio02"><label for="radio02_03">ans 03</label>
-<input type="radio" id="radio02_04" name="radio02"><label for="radio02_04">ans 04</label>
-
----
-
-#### question 3
-
-what is this?
-
-<input type="radio" id="radio03_01" name="radio03"><label for="radio03_01">ans 01</label>
-<input type="radio" id="radio03_02" name="radio03"><label for="radio03_02">ans 02</label>
-<input type="radio" id="radio03_03" name="radio03"><label for="radio03_03">ans 03</label>
-<input type="radio" id="radio03_04" name="radio03"><label for="radio03_04">ans 04</label>
-
----
-
-#### question 4
-
-what is this?
-
-<input type="radio" id="radio04_01" name="radio04"><label for="radio04_01">ans 01</label>
-<input type="radio" id="radio04_02" name="radio04"><label for="radio04_02">ans 02</label>
-<input type="radio" id="radio04_03" name="radio04"><label for="radio04_03">ans 03</label>
-<input type="radio" id="radio04_04" name="radio04"><label for="radio04_04">ans 04</label>
-
----
-
-#### question 5
-
-what is this?
-
-<input type="radio" id="radio05_01" name="radio05"><label for="radio05_01">ans 01</label>
-<input type="radio" id="radio05_02" name="radio05"><label for="radio05_02">ans 02</label>
-<input type="radio" id="radio05_03" name="radio05"><label for="radio05_03">ans 03</label>
-<input type="radio" id="radio05_04" name="radio05"><label for="radio05_04">ans 04</label>
-
----
-
-#### question 6
-
-what is this?
-
-<input type="radio" id="radio06_01" name="radio06"><label for="radio06_01">ans 01</label>
-<input type="radio" id="radio06_02" name="radio06"><label for="radio06_02">ans 02</label>
-<input type="radio" id="radio06_03" name="radio06"><label for="radio06_03">ans 03</label>
-<input type="radio" id="radio06_04" name="radio06"><label for="radio06_04">ans 04</label>
-
----
-
-#### question 7
-
-what is this?
-
-<input type="radio" id="radio07_01" name="radio07"><label for="radio07_01">ans 01</label>
-<input type="radio" id="radio07_02" name="radio07"><label for="radio07_02">ans 02</label>
-<input type="radio" id="radio07_03" name="radio07"><label for="radio07_03">ans 03</label>
-<input type="radio" id="radio07_04" name="radio07"><label for="radio07_04">ans 04</label>
-
----
-
-#### question 8
-
-what is this?
-
-<input type="radio" id="radio08_01" name="radio08"><label for="radio08_01">ans 01</label>
-<input type="radio" id="radio08_02" name="radio08"><label for="radio08_02">ans 02</label>
-<input type="radio" id="radio08_03" name="radio08"><label for="radio08_03">ans 03</label>
-<input type="radio" id="radio08_04" name="radio08"><label for="radio08_04">ans 04</label>
-
----
-
-#### question 9
-
-what is this?
-
-<input type="radio" id="radio09_01" name="radio09"><label for="radio09_01">ans 01</label>
-<input type="radio" id="radio09_02" name="radio09"><label for="radio09_02">ans 02</label>
-<input type="radio" id="radio09_03" name="radio09"><label for="radio09_03">ans 03</label>
-<input type="radio" id="radio09_04" name="radio09"><label for="radio09_04">ans 04</label>
-
----
-
-#### question 10
-
-what is this?
-
-<input type="radio" id="radio10_01" name="radio10"><label for="radio10_01">ans 01</label>
-<input type="radio" id="radio10_02" name="radio10"><label for="radio10_02">ans 02</label>
-<input type="radio" id="radio10_03" name="radio10"><label for="radio10_03">ans 03</label>
-<input type="radio" id="radio10_04" name="radio10"><label for="radio10_04">ans 04</label>
-
----
-
-#### 結果はいかに！？
-
-<div id="ansButton">答え合わせ</div>
-
----
-
+<div style="text-align: center;"><img src="image/digirea.png" alt="digirea" style="width: 85%; margin: 0px auto;"></div>
 
