@@ -2,4 +2,8 @@
 
 presentation demo.
 
+# warning
+
+フルスクリーンからのリロードちゃんとやりましょうね！
+
 
