@@ -421,18 +421,24 @@ label:hover {
     padding: 0px 50px;
 }
 
-#parts #description p {
+#description pre {
+    background-color: transparent;
+    border: 0px;
+    border-radius: 0px;
+    color: silver;
+    font-family: inherit;
     font-size: 32px;
-    line-height: 1.5;
     text-align: right;
+    line-height: 1.5;
     margin: 0px 0px 0px auto;
     padding: 0px;
+    overflow: hidden;
     width: 75%;
     opacity: 1.0;
     transition: margin 1.0s ease-out, opacity 0.8s ease-out;
 }
 
-#parts #description p.hidden {
+#parts #description pre.hidden {
     margin: 0px 0px 50px auto;
     opacity: 0.0;
     transition: margin 0.1s ease-out, opacity 0.1s ease-out;
