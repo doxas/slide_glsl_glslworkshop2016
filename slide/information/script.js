@@ -69,7 +69,7 @@
                 parts(null);
                 if(intervalId === -1){
                     pageChange(null, 0);
-                    intervalId = setInterval(pageChange, 5000);
+                    intervalId = setInterval(pageChange, 30000);
                 }else{
                     clearInterval(intervalId);
                     intervalId = -1;
