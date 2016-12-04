@@ -101,7 +101,7 @@
 
         e = pages[activePage].getElementsByClassName('json');
         if(e.length > 0){
-            j = JSON.parse(e[0].textContent);
+            j = JSON.parse(e[0].innerHTML);
             g = parseInt(pages[activePage].children[0].id.match(/\d+/)[0], 10);
             if(!isNaN(g)){
                 f = bid('partsnumber');
@@ -111,7 +111,7 @@
                 f = bid('partsauthor').children[0];
                 f.textContent = j.author;
                 f = bid('description').children[0];
-                f.textContent = j.description;
+                f.innerHTML = j.description;
                 partsVisible = true;
             }
         }else{
@@ -182,6 +182,8 @@
             console.log('shader source not found');
             return;
         }
+        fBufferWidth = window.innerWidth;
+        fBufferHeight = window.innerHeight;
         if(!gl){
             gl = canvas.getContext('webgl');
             gl.getExtension('OES_standard_derivatives');
@@ -194,8 +196,6 @@
             tUni.texture = gl.getUniformLocation(tPrg, 'texture');
             bAttLocation = gl.getAttribLocation(tPrg, 'position');
             fFront = fBack = fTemp = null;
-            fBufferWidth = window.innerWidth;
-            fBufferHeight = window.innerHeight;
             gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,0,-1,-1,0,1,1,0,1,-1,0]), gl.STATIC_DRAW);
             gl.disable(gl.DEPTH_TEST);
@@ -209,6 +209,8 @@
         resetBuffer(fFront);
         resetBuffer(fBack);
         resetBuffer(fTemp);
+        canvas.width = fBufferWidth;
+        canvas.height = fBufferHeight;
         fFront = create_framebuffer(fBufferWidth, fBufferHeight);
         fBack  = create_framebuffer(fBufferWidth, fBufferHeight);
         prg = gl.createProgram();

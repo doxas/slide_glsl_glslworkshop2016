@@ -1574,7 +1574,7 @@ void main(){
 {
     "title": "Shinto Shrine Archway",
     "author": "gam0022",
-    "description": "先週くらいにShadertoyに投稿したのをポート！\nhttps://www.shadertoy.com/view/XttSWN"
+    "description": "先週くらいにShadertoyに投稿したのをポート！<br>https://www.shadertoy.com/view/XttSWN"
 }
 @@@
 
@@ -2164,7 +2164,7 @@ void main () {
 {
     "title": "be dazzled by a glare",
     "author": "phoooutty",
-    "description": "揺れる電球に目がくらむイメージです。\n本日初めてGLSLに触った初心者なので、しょぼいですが…"
+    "description": "揺れる電球に目がくらむイメージです。<br>本日初めてGLSLに触った初心者なので、しょぼいですが…"
 }
 @@@
 
@@ -3087,7 +3087,7 @@ void main( void ) {
 {
     "title": "ジャズと共に",
     "author": "hgoe",
-    "description": "上下にアニメーションさせたり、\nマウスxyから、線を縦横に分けたりしたかったやつ"
+    "description": "上下にアニメーションさせたり、<br>マウスxyから、線を縦横に分けたりしたかったやつ"
 }
 @@@
 
@@ -3334,7 +3334,7 @@ void main(){
 {
     "title": "no-title",
     "author": "yuichiroharai",
-    "description": "長谷川さんの講義の\n一方は0-1、一方は1-0のヤツ（？）を参考に\n縦と横のノイズ模様を切り替えたもの。\nかつ、なんとなくランダムになるようにして、どっちが出るのか分からないみたいにしてみました。"
+    "description": "長谷川さんの講義の<br>一方は0-1、一方は1-0のヤツ（？）を参考に<br>縦と横のノイズ模様を切り替えたもの。<br>かつ、なんとなくランダムになるようにして、どっちが出るのか分からないみたいにしてみました。"
 }
 @@@
 

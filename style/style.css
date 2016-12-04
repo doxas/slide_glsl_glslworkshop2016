@@ -421,7 +421,7 @@ label:hover {
     padding: 0px 50px;
 }
 
-#description pre {
+#description p {
     background-color: transparent;
     border: 0px;
     border-radius: 0px;
@@ -438,7 +438,7 @@ label:hover {
     transition: margin 1.0s ease-out, opacity 0.8s ease-out;
 }
 
-#parts #description pre.hidden {
+#parts #description p.hidden {
     margin: 0px 0px 50px auto;
     opacity: 0.0;
     transition: margin 0.1s ease-out, opacity 0.1s ease-out;
