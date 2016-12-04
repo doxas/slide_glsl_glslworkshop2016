@@ -101,7 +101,7 @@
 
         e = pages[activePage].getElementsByClassName('json');
         if(e.length > 0){
-            j = JSON.parse(e[0].innerHTML);
+            j = JSON.parse(e[0].textContent);
             g = parseInt(pages[activePage].children[0].id.match(/\d+/)[0], 10);
             if(!isNaN(g)){
                 f = bid('partsnumber');
@@ -111,7 +111,7 @@
                 f = bid('partsauthor').children[0];
                 f.textContent = j.author;
                 f = bid('description').children[0];
-                f.innerHTML = j.description;
+                f.innerHTML = j.description.replace(/\n/g, '<br>');
                 partsVisible = true;
             }
         }else{
