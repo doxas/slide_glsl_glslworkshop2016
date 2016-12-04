@@ -194,8 +194,8 @@
             tUni.texture = gl.getUniformLocation(tPrg, 'texture');
             bAttLocation = gl.getAttribLocation(tPrg, 'position');
             fFront = fBack = fTemp = null;
-            fBufferWidth = 2048;
-            fBufferHeight = 2048;
+            fBufferWidth = window.innerWidth;
+            fBufferHeight = window.innerHeight;
             gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
             gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,1,0,-1,-1,0,1,1,0,1,-1,0]), gl.STATIC_DRAW);
             gl.disable(gl.DEPTH_TEST);
@@ -232,6 +232,7 @@
 
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
         gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.viewport(0, 0, fBufferWidth, fBufferHeight);
 
         timeout = setTimeout(function(){
             console.log('render: ', shaderSource);
@@ -253,7 +254,6 @@
         gl.enableVertexAttribArray(aAttLocation);
         gl.vertexAttribPointer(aAttLocation, 3, gl.FLOAT, false, 0, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
-        gl.viewport(0, 0, fBufferWidth, fBufferHeight);
         gl.uniform2fv(uni.mouse, mousePosition);
         gl.uniform1f(uni.time, nowTime);
         gl.uniform2fv(uni.resolution, [fBufferWidth, fBufferHeight]);
@@ -267,7 +267,6 @@
         gl.enableVertexAttribArray(bAttLocation);
         gl.vertexAttribPointer(bAttLocation, 3, gl.FLOAT, false, 0, 0);
         gl.clear(gl.COLOR_BUFFER_BIT);
-        gl.viewport(0, 0, window.innerWidth, window.innerHeight);
         gl.uniform1i(tUni.texture, 1);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
