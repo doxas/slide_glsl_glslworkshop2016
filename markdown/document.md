@@ -48,7 +48,7 @@ void main(){
 {
     "title": "HELLOWORLD!!!!",
     "author": "notargs",
-    "description": "printf("Hello World");"
+    "description": "printf(\"Hello World\");"
 }
 @@@
 
@@ -1873,7 +1873,7 @@ void main( void ) {
 @@@
 {
     "title": "Bubble Gems",
-    "author": "tomoyuki710@hotmail.com",
+    "author": "tomoyuki710",
     "description": " "
 }
 @@@
@@ -2157,52 +2157,6 @@ void main () {
 |||
 
 ---
-
-
-#### 000
-
-@@@
-{
-    "title": "ステンドガラスっぽい何か",
-    "author": "shuto",
-    "description": "初めてのglsl"
-}
-@@@
-
----
-
-|||
-precision mediump float;
-uniform vec2  resolution;     // resolution (width, height)
-uniform vec2  mouse;          // mouse      (0.0 ~ 1.0)
-uniform float time;           // time       (1second == 1.0)
-uniform sampler2D backbuffer; // previous scene texture
-
-const float PI = 3.1415926;
-const float PI2 = PI * 2.0;
-
-
-void main(){
-    vec2 p = (gl_FragCoord.xy * 2.0 - resolution) / resolution;
-    float a = (atan(p.y, p.x) + PI) / PI2;
-    float a2 = (atan(time*PI2, time*PI) + PI) / PI2;
-    float s = sin(a * PI * 40.0);
-    float x = length( p*50.0 ) - time* 20.0;
-    float f = sin(x)/PI*x*0.5;
-    float f1 = sin(length(a* 60.0) + s + time * 0.0);
-    float f2 = sin(length(p* 40.0) + s - time * 10.0) - f1;
-    float f3 = sin(length(p* 30.0) + s - time * 10.0) + f2;
-    float m = 0.1 / length(p - vec2(cos(time*8.0)*0.3, sin(time*5.0)));
-    m += 0.1 / length(p - vec2(cos(time*7.0)*0.6, 0.5*sin(time*9.0)));;
-    m += 0.1 / length(p - vec2(cos(time*2.0)*0.3, 0.2*sin(time*3.0)));
-    gl_FragColor = vec4(vec3(f1, f2, f3)*m*f*a2, 1.0);
-    
-}
-
-|||
-
----
-
 
 #### 000
 
